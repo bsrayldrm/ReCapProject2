@@ -1,9 +1,13 @@
 ﻿using Business.Abstract;
+using Business.Constant;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
+using Color = Entities.Concrete.Color;
 
 namespace Business.Concrete
 {
@@ -16,30 +20,36 @@ namespace Business.Concrete
             _colorDal = brandDal;
         }
 
-        public void Add(Color entity)
+        public IResult Add(Color color)
         {
-            _colorDal.Add(entity);
+           
+            
+            _colorDal.Add(color);
+            return new SuccessResult(Messages.ColorAdded);
         }
 
-        public void Delete(Color color)
+        public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
+            return new SuccessResult(Messages.ColorDeleted);
         }
 
-        public List<Color> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
-            return _colorDal.GetAll();
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorsListed);
 
         }
 
-        public Color GetById(int id)
+        public IDataResult<Color> GetById(int id)
         {
-            return _colorDal.Get(c => c.ColorId == id);
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
         }
 
-        public void Update(Color entity)
+        public IResult Update(Color entity)
         {
             _colorDal.Update(entity);
+            return new SuccessResult(Messages.ColorUpdated);
+
         }
     }
 }

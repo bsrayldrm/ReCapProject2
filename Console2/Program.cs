@@ -10,7 +10,7 @@ namespace Console2
     {
         static void Main(string[] args)
         {
-            CarTest();
+           // CarTest();
 
             //BrandTest();
 
@@ -60,7 +60,7 @@ namespace Console2
             }
         }*/
 
-        private static void CarTest()
+        /*private static void CarTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
             foreach (var car in carManager.GetCarDetail())
@@ -68,6 +68,7 @@ namespace Console2
                 Console.WriteLine(car.BrandName+'-'+car.ColorName);
             }
         }
+        */
     }
 
  }
