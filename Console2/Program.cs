@@ -10,17 +10,18 @@ namespace Console2
     {
         static void Main(string[] args)
         {
-           // CarTest();
+            //CarTest();
 
             //BrandTest();
 
             //ColorTest();
 
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.Add(new Rentals {CarId=1, RentalId = 7, CustomerId = 3, RentDate = DateTime.Now, ReturnDate = new DateTime(2021, 02, 15) });
+            Console.WriteLine(result.Message);
 
 
-
-
-
+           
 
 
             /*Console.WriteLine("Brand Id'si 2 olan arabalar: \nId\tColor Name\tBrand Name\tModel Year\tDaily Price\tDescriptions");
@@ -42,33 +43,45 @@ namespace Console2
            */
         }
 
-       /* private static void ColorTest()
-        {
-            ColorManager colorManager = new ColorManager(new EfColorDal());
-            foreach (var car in colorManager.GetAll())
-            {
-                Console.WriteLine(car.ColorName);
-            }
-        }
+        /* private static void ColorTest()
+         {
+             ColorManager colorManager = new ColorManager(new EfColorDal());
+             foreach (var car in colorManager.GetAll())
+             {
+                 Console.WriteLine(car.ColorName);
+             }
+         }
 
-        private static void BrandTest()
-        {
-            BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var car in brandManager.GetAll())
-            {
-                Console.WriteLine(car.BrandId);
-            }
-        }*/
+         private static void BrandTest()
+         {
+             BrandManager brandManager = new BrandManager(new EfBrandDal());
+             foreach (var car in brandManager.GetAll())
+             {
+                 Console.WriteLine(car.BrandId);
+             }
+         }*/
+        
 
         /*private static void CarTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetCarDetail())
+        var result = carManager.GetCarDetails();
+            if (result.Success==true)
             {
-                Console.WriteLine(car.BrandName+'-'+car.ColorName);
+                foreach (var join in result.Data)
+                {
+                    Console.WriteLine(join.Id);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+            
         }
         */
+        
     }
 
  }

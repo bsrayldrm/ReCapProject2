@@ -18,7 +18,7 @@ namespace Business.Constant
         public static string BrandDeleted = "Marka silindi";
         public static string BrandsListed = "Markalar Listelendi";
         public static string BrandUpdated = "Marka Güncellendi";
-        public static string BrandNameInvalid = "Marka ismi geçersiz,2 harften fazla olmalıdır";
+        public static string BrandNameInvalid = "Girilen değer geçersiz.Marka ismi 2 karakterden fazla olmalıdır";
 
         //Color CRUD
         public static string ColorAdded = "Renk Eklendi";
@@ -30,7 +30,7 @@ namespace Business.Constant
         public static string UserAdded = "Kullanıcı eklendi";
         public static string UserDeleted = "Kullanıcı silindi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
-        public static string UsersListed = "Kullanıcılar Listelendi";
+        public static string UserListed = "Kullanıcılar Listelendi";
         public static string UserNameInvalid = "Kullanıcı ismi geçersiz";
 
         //Customer CRUD
@@ -38,12 +38,19 @@ namespace Business.Constant
         public static string CustomerDeleted = "Müşteri silindi";
         public static string CustomerUpdated = "Müşteri Güncellendi";
         public static string CustomersListed = "Müşteriler Listelendi";
-        public static string CustomerCompanyNameInvalid = "Müşteri şirket ismi geçersiz";
+        
+
+        //Rental CRUD
+        public static string RentalAddedError = "Araç teslim edilmeden kiralanamaz!";
+        public static string RentalAdded = "Kiralama işlemi tamamlandı";
+        public static string RentalDelete = "Kiralama işlemi silindi";
+        public static string RentalUpdate = "Kiralama işlemi güncellendi";
+        public static string GetRentalDetails = "Kiralama Detayları";
 
 
         public static string GetCarDetails = "Araç Detayları";
         public static string MaintenanceTime = "Sistem Bakımda";
-        public static string DailyPriceError = "Araç günlük bedeli 0 dan büyük olmalıdır.";
+        public static string DailyPriceError = "Girilen değer geçersiz.Araç günlük bedeli 0 dan büyük olmalıdır!";
         
 
     }

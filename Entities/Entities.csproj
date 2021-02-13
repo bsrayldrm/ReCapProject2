@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\..\FinalProject\Core\Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FinalProject\Core\Core.csproj" />
+    <Folder Include="Abstract\" />
   </ItemGroup>
 
 </Project>
